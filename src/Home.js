@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import PollCreation from './PollCreation';
+import MyPolls from './MyPolls'; // Default import
 
 const Home = () => {
-  const [isYearly, setIsYearly] = useState(false); // Yıllık/aylık durumunu tutar
+  const [isYearly, setIsYearly] = useState(false);
+ 
+  
+  
 
-  const handleCreatePoll = () => {
-    // window.location.href = '/create-pool'
-  };
+  
 
   const togglePricing = () => {
-    setIsYearly(!isYearly); // Yıllık/aylık durumunu tersine çevir
+    setIsYearly(!isYearly);
   };
 
-  // Fiyatları hesapla
   const getPrice = (monthlyPrice) => {
-    return isYearly ? monthlyPrice * 12 * 0.8 : monthlyPrice; // Yıllık fiyat %20 indirimli
+    return isYearly ? monthlyPrice * 12 * 0.8 : monthlyPrice;
   };
 
   return (
@@ -28,10 +30,11 @@ const Home = () => {
         <button style={styles.passcodeButton}>Submit</button>
       </div>
 
-      {/* Create Poll Button */}
-      <button onClick={handleCreatePoll} style={styles.createPollButton}>
-        Create Poll
-      </button>
+      
+
+      
+
+      
 
       {/* Pricing Toggle */}
       <div style={styles.toggleContainer}>
@@ -76,8 +79,8 @@ const Home = () => {
         <div
           style={{
             ...styles.pricingBox,
-            backgroundColor: '#000', // Siyah arka plan
-            color: '#fff', // Beyaz metin rengi
+            backgroundColor: '#000',
+            color: '#fff',
           }}
         >
           <h2>Pro</h2>
@@ -171,7 +174,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     marginTop: '40px',
-    gap: '20px', // Kutular arasına boşluk ekledik
+    gap: '20px',
   },
   pricingBox: {
     border: '1px solid #ccc',

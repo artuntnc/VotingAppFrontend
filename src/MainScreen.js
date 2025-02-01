@@ -8,7 +8,8 @@ import Polls from './Polls';
 import MyPolls from './MyPolls';
 import About from './About';
 
-const MainScreen = () => {
+
+const MainScreen = ({polls,setPolls}) => {
   return (
     <Router>
       <div style={styles.container}>
@@ -44,7 +45,7 @@ const MainScreen = () => {
           <Route path="/mypolls" element={<MyPolls />} />
           <Route path="/about" element={<About />} />
 
-          {/* Next things we gona add here */}
+          {/* Next things we gona add here . but ig i added everything*/}
         </Routes>
       </div>
     </Router>
