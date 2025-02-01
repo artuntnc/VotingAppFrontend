@@ -1,15 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import SignIn from './SignIn';
-import Home from './Home'; // Home bileşenini içe aktarın
+import Home from './Home'; 
 import avatar from './images/avatari.png';
-
+import SignUp from './SignUp';
+import Polls from './Polls';
+import MyPolls from './MyPolls';
+import About from './About';
 
 const MainScreen = () => {
   return (
     <Router>
       <div style={styles.container}>
-        {/* Üst Navigasyon Çubuğu */}
+        {/*Up navigation */}
         <nav style={styles.nav}>
           <div style={styles.navLeft}>
             <Link to="/" style={styles.navItem}>Home</Link>
@@ -27,15 +30,21 @@ const MainScreen = () => {
               style={styles.avatar}
             />
             <Link to="/signin" style={styles.signInButton}>Sign In</Link>
-            <button style={styles.signUpButton}>Sign Up</button>
+            
+            <Link to="/signup" style={styles.signUpButton}>Sign Up</Link>
           </div>
         </nav>
 
-        {/* Rotalar */}
+        
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Ana sayfa için Home bileşeni */}
-          <Route path="/signin" element={<SignIn />} /> {/* Sign In sayfası */}
-          {/* Diğer rotalar buraya eklenebilir */}
+          <Route path="/" element={<Home />} /> 
+          <Route path="/signin" element={<SignIn />} /> 
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/polls" element={<Polls />} />
+          <Route path="/mypolls" element={<MyPolls />} />
+          <Route path="/about" element={<About />} />
+
+          {/* Next things we gona add here */}
         </Routes>
       </div>
     </Router>
@@ -89,7 +98,7 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     textDecoration: 'none',
-    fontSize:'14px'
+    fontSize:'14px',
   },
   signUpButton: {
     padding: '8px 16px',
@@ -98,7 +107,8 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    fontSize: '14px'
+    textDecoration: 'none',
+    fontSize: '14px',
   },
 };
 
